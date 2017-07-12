@@ -26,7 +26,6 @@ import java.util.Map;
 @RequestMapping("share")
 public class ShareController extends MultiActionController {
 
-
     @Autowired
     private ZonesFileService zonesFileService;
 
@@ -48,8 +47,10 @@ public class ShareController extends MultiActionController {
                 dataMap.put(zonesFile.getId(), zonesFile);
             }
         }
+
         ObjectMapper objectMapper = new ObjectMapper();
         String data = objectMapper.writeValueAsString(dataMap);
         modelAndView.addObject("data", data);
     }
+
 }
