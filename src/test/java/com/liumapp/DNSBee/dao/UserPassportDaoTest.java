@@ -1,6 +1,7 @@
 package com.liumapp.DNSBee.dao;
 
 import com.liumapp.DNSBee.model.UserPassport;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,6 +20,7 @@ public class UserPassportDaoTest {
     @Resource
     private UserPassportDAO userPassportDAO;
 
+    @Ignore
     @Test
     public void test() {
         UserPassport userPassport = new UserPassport("admin", "admin123", "123", "12345161");
@@ -34,6 +36,7 @@ public class UserPassportDaoTest {
         System.out.println(cairne);
     }
 
+    @Ignore
     @Test
     public void testInsert () {
         UserPassport userPassport = new UserPassport(3,"admin1234" , "admin123" , "123123" , "1234567");

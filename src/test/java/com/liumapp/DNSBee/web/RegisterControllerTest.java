@@ -3,6 +3,7 @@ package com.liumapp.DNSBee.web;
 import com.liumapp.DNSBee.exception.RegisterException;
 import com.liumapp.DNSBee.model.UserPassport;
 import com.liumapp.DNSBee.service.UserPassportSerivce;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class RegisterControllerTest {
     @Autowired
     private UserPassportSerivce userPassportSerivce;
 
+    @Ignore
     @Test
     public void test() {
         try {

@@ -1,6 +1,7 @@
 package com.liumapp.DNSBee.util;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.io.IOException;
  */
 public class UserZonesUtilsTest {
 
+    @Ignore
     @Test
     public void test() throws IOException {
         String text = "#192.168.9.109\twww.dianping.com\t#test\n" +
@@ -24,6 +26,7 @@ public class UserZonesUtilsTest {
         Assert.assertEquals(text2,text);
     }
 
+    @Ignore
     @Test
     public void testMerge() {
         String textA = "#127.0.0.1\twww.dianping.com\t#test\n";

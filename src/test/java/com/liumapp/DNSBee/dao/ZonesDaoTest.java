@@ -1,5 +1,6 @@
 package com.liumapp.DNSBee.dao;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,6 +20,7 @@ public class ZonesDaoTest {
     @Resource
     private ZonesFileDAO zonesFileDAO;
 
+    @Ignore
     @Test
     public void test(){
         System.out.println(zonesFileDAO.findPublic());

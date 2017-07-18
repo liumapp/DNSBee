@@ -2,7 +2,7 @@ package com.liumapp.DNSBee.filter;
 
 import com.liumapp.DNSBee.model.UserPassport;
 import com.liumapp.DNSBee.service.UserPassportSerivce;
-import us.codecraft.blackhole.suite.util.SpringLocator;
+import com.liumapp.DNSBee.util.SpringLocator;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

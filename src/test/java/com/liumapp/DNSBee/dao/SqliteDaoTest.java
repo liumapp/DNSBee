@@ -25,6 +25,7 @@ public class SqliteDaoTest {
     @Autowired
     private DataSource dataSource;
 
+    @Ignore
     @Test
     public void test() throws SQLException {
         Connection connection = dataSource.getConnection();
