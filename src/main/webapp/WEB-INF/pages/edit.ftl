@@ -57,26 +57,26 @@
             <li>
                 <p>ip domain</p>
 
-                <p>e.g. 127.0.0.1 www.dianping.com</p>
+                <p>e.g. 127.0.0.1 www.liumapp.com</p>
 
             </li>
             <li>
                 <p>"*" stand for any length of charactor</p>
 
-                <p>e.g. 127.0.0.1 *.dianping.com</p>
+                <p>e.g. 127.0.0.1 *.liumapp.com</p>
 
             </li>
             <li>
                 <p>"#" for comment</p>
 
-                <p>e.g. #127.0.0.1 t.dianping.com</p>
+                <p>e.g. #127.0.0.1 t.liumapp.com</p>
 
                 <p>Commented line is a candidate for choice.</p>
             </li>
             <li>
                 <p>"#" in line for comment of config</p>
 
-                <p>e.g. #127.0.0.1 t.dianping.com #local test</p>
+                <p>e.g. #127.0.0.1 t.liumapp.com #local test</p>
 
                 <p>'local test' is comment of this line.</p>
             </li>

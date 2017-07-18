@@ -3,13 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
-    <groupId>us.codecraft</groupId>
-    <artifactId>hostd-server</artifactId>
-    <version>0.1.0</version>
+    <groupId>com.liumapp</groupId>
+    <artifactId>DNSBee</artifactId>
+    <version>1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- m2eclipse wtp 0.12+ enabled to configure contextRoot, add by w.vela -->
         <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
         <spring-version>3.1.1.RELEASE</spring-version>
         <spring-security-version>3.1.0.RELEASE</spring-security-version>

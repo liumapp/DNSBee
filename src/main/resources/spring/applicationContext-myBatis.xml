@@ -9,7 +9,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="us.codecraft.blackhole.suite.dao" />
+        <property name="basePackage" value="com.liumapp.DNSBee.dao" />
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -24,6 +24,7 @@
         <property name="username" value="root" />
 
         <property name="password" value="adminadmin" />
+
     </bean>
 
 </beans>
