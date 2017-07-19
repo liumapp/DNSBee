@@ -4,6 +4,7 @@ import com.liumapp.DNSQueen.queen.Queen;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
@@ -12,6 +13,7 @@ import java.io.IOException;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
+@Service
 public class DnsbroodConnector implements InitializingBean {
 
     //delete_zones_ip_192.168.0.1

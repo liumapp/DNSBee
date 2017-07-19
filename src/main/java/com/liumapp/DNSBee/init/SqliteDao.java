@@ -1,4 +1,4 @@
-package com.liumapp.DNSBee.dao;
+package com.liumapp.DNSBee.init;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

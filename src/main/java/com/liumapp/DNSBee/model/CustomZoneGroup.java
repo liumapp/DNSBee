@@ -7,9 +7,6 @@ package com.liumapp.DNSBee.model;
  */
 public class CustomZoneGroup {
 
-    /**
-     *
-     */
     private String userName;
 
     private int id;
