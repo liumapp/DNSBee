@@ -21,21 +21,21 @@ public class InitData {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/spring/applicationContext*.xml");
         DataSource dataSource = applicationContext.getBean(DataSource.class);
         SqliteDao sqliteDao = new SqliteDao(dataSource);
-//        sqliteDao.excute("CREATE TABLE User_Passport (\n" +
-//                "  `id` INTEGER primary key AUTOINCREMENT,\n" +
-//                "  `username` text UNIQUE,\n" +
-//                "  `passwordSalt` string,\n" +
-//                "  `salt` string,\n" +
-//                "  `ticket` text UNIQUE,\n" +
-//                "  `zones` string default \"\"\n" +
-//                ");");
-//        sqliteDao.excute("CREATE TABLE ZonesFile (\n" +
-//                "  `id` INTEGER primary key AUTOINCREMENT,\n" +
-//                "  `type` INTEGER,\n" +
-//                "  `name` string,\n" +
-//                "  `text` string,\n" +
-//                "  `user` string\n" +
-//                ");");
+        sqliteDao.excute("CREATE TABLE User_Passport (\n" +
+                "  `id` INTEGER primary key AUTOINCREMENT,\n" +
+                "  `username` text UNIQUE,\n" +
+                "  `passwordSalt` string,\n" +
+                "  `salt` string,\n" +
+                "  `ticket` text UNIQUE,\n" +
+                "  `zones` string default \"\"\n" +
+                ");");
+        sqliteDao.excute("CREATE TABLE ZonesFile (\n" +
+                "  `id` INTEGER primary key AUTOINCREMENT,\n" +
+                "  `type` INTEGER,\n" +
+                "  `name` string,\n" +
+                "  `text` string,\n" +
+                "  `user` string\n" +
+                ");");
         UserPassportSerivce userPassportSerivce = applicationContext.getBean(UserPassportSerivce.class);
         try {
             userPassportSerivce.addUserPassport("admin","admin123");
