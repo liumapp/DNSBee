@@ -71,7 +71,6 @@
             <version>4.7</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-lgpl</artifactId>
@@ -128,7 +127,11 @@
             <artifactId>commons-cli</artifactId>
             <version>1.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.liumapp</groupId>
+            <artifactId>DNSQueen</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
