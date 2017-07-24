@@ -36,11 +36,12 @@ public class UserPassportServiceImpl implements UserPassportSerivce {
         }
         String salt = UserPassportUtil.generateSalt();
         String ticket = UserPassportUtil.generateTicket(username);
+        String userNumber = UserPassportUtil.generateUserNumber();
         while (userPassportDAO.getByTicket(ticket) != null) {
             ticket = UserPassportUtil.generateTicket(username);
         }
         String passwordSalt = UserPassportUtil.salt(password, salt);
-        UserPassport userPassport = new UserPassport(username, passwordSalt, salt, ticket);
+        UserPassport userPassport = new UserPassport(userNumber , username, passwordSalt, salt, ticket);
         try {
             userPassportDAO.insert(userPassport);
         } catch (Exception e) {

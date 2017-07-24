@@ -9,6 +9,8 @@ public class UserPassport {
 
     private int id;
 
+    private String userNumber;
+
     private String username;
 
     private String passwordSalt;
@@ -19,12 +21,20 @@ public class UserPassport {
 
     private String zones;
 
+    public String getUserNumber() {
+        return userNumber;
+    }
+
     public String getTicket() {
         return ticket;
     }
 
     public String getZones() {
         return zones;
+    }
+
+    public void setUserNumber(String userNumber) {
+        this.userNumber = userNumber;
     }
 
     public void setZones(String zones) {
@@ -60,6 +70,24 @@ public class UserPassport {
     }
 
     /**
+     *
+     * @param id
+     * @param userNumber
+     * @param username
+     * @param passwordSalt
+     * @param salt
+     * @param ticket
+     */
+    public UserPassport(int id, String userNumber, String username, String passwordSalt, String salt, String ticket) {
+        this.id = id;
+        this.userNumber = userNumber;
+        this.username = username;
+        this.passwordSalt = passwordSalt;
+        this.salt = salt;
+        this.ticket = ticket;
+    }
+
+    /**
      * @param id
      * @param username
      * @param passwordSalt
@@ -69,6 +97,22 @@ public class UserPassport {
     public UserPassport(int id, String username, String passwordSalt, String salt, String ticket) {
         super();
         this.id = id;
+        this.username = username;
+        this.passwordSalt = passwordSalt;
+        this.salt = salt;
+        this.ticket = ticket;
+    }
+
+    /**
+     *
+     * @param userNumber
+     * @param username
+     * @param passwordSalt
+     * @param salt
+     * @param ticket
+     */
+    public UserPassport(String userNumber, String username, String passwordSalt, String salt, String ticket) {
+        this.userNumber = userNumber;
         this.username = username;
         this.passwordSalt = passwordSalt;
         this.salt = salt;

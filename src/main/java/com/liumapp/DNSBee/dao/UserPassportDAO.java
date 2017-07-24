@@ -19,11 +19,11 @@ public interface UserPassportDAO {
     @Select("select * from User_Passport where ticket=#{ticket}")
     public UserPassport getByTicket(@Param("ticket") String ticket);
 
-    @Insert("insert into User_Passport (`username`,`passwordSalt`,`salt`,`ticket`) values"+
-            " (#{username},#{passwordSalt},#{salt},#{ticket})")
+    @Insert("insert into User_Passport (`userNumber`,`username`,`passwordSalt`,`salt`,`ticket`) values"+
+            " (#{userNumber},#{username},#{passwordSalt},#{salt},#{ticket})")
     public int insert(UserPassport userPassport);
 
-    @Update("update User_Passport set `username`=#{username},`passwordSalt`=#{passwordSalt},"+
+    @Update("update User_Passport set `userNumber`=#{userNumber},`username`=#{username},`passwordSalt`=#{passwordSalt},"+
             "`salt`=#{salt},`ticket`=#{ticket} where `id`=#{id}")
     public int update(UserPassport userPassport);
 

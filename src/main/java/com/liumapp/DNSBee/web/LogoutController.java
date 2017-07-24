@@ -33,7 +33,6 @@ public class LogoutController extends MultiActionController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        return null;
 
     }
 

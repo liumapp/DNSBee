@@ -6,6 +6,8 @@ import org.springframework.util.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.RandomAccessFile;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -38,6 +40,11 @@ public class UserPassportUtil {
     public static String generateSalt() {
         return StringUtils.substring(DigestUtils.md5DigestAsHex(("" + random.nextInt() + System
                 .currentTimeMillis()).getBytes()), 20);
+    }
+
+    public static String generateUserNumber() {
+        int rdNumber = (int) Math.round(Math.random() * 8999 + 1000);
+        return "LM" + new Date().getTime() + rdNumber;
     }
 
     public static String getTicketFromCookie(HttpServletRequest request) {
