@@ -34,6 +34,7 @@ public class ZonesApplyController extends MultiActionController {
     public Object save(@RequestParam("text") String text, HttpServletRequest request) {
 //        zonesFileApplyer.apply(IPUtils.getClientIp(request), text);
         zonesFileApplyer.apply(IPUtils.LOCAL_LOOP_ADDRESS , text);
+
         if (dnsbroodConnector.isConnected()) {
             return JsonResult.success("Aplly success!");
         } else {

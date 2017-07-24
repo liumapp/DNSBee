@@ -18,8 +18,13 @@ public class DnsbroodConnector implements InitializingBean {
 
     //delete_zones_ip_192.168.0.1
     private static final String DELETE_ZONES_IP = "delete_zones_ip_";
+
     //add_zones_ip_192.168.0.1:127.0.0.1_*.dianping.com
     private static final String ADD_ZONES_IP = "add_zones_ip_";
+
+    private static final String UPDATE_ZONES_IP = "update_zones_ip_";
+
+    private static final String SELECT_ZONES_IP = "select_zones_ip_";
 
     private Queen queen;
 

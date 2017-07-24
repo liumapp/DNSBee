@@ -52,7 +52,6 @@
     <div class="span11 alert alert-info">
         <p class="lead">Syntax:</p>
 
-
         <ul>
             <li>
                 <p>ip domain</p>

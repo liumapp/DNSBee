@@ -27,7 +27,7 @@ public class ZonesFileApplyer {
                 text));
         String line = null;
         try {
-            dnsbroodConnector.deleteAllByIp(ip);
+//            dnsbroodConnector.deleteAllByIp(ip);
             while ((line = bufferedReader.readLine()) != null) {
                 dnsbroodConnector.addByIp(ip, line);
             }

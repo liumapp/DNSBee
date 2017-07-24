@@ -8,6 +8,7 @@ CREATE TABLE ZonesFile (
 
 CREATE TABLE User_Passport (
   `id` INTEGER primary key AUTOINCREMENT,
+  `userNumber` string UNIQUE ,
   `username` text UNIQUE,
   `passwordSalt` string,
   `salt` string,
