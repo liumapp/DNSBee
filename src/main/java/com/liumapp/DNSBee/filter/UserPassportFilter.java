@@ -12,6 +12,7 @@ import java.io.IOException;
  * Created by liumapp on 7/17/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
+ * 保持每个页面再打开之前都跟cookie的userPassport进行一遍同步
  */
 public class UserPassportFilter implements Filter {
 

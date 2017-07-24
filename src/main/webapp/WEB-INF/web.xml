@@ -15,14 +15,14 @@
         <param-value>2000</param-value>
     </context-param>
 
-    <filter>
-        <filter-name>UserPassportFilter</filter-name>
-        <filter-class>com.liumapp.DNSBee.filter.UserPassportFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>UserPassportFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    <!--<filter>-->
+        <!--<filter-name>UserPassportFilter</filter-name>-->
+        <!--<filter-class>com.liumapp.DNSBee.filter.UserPassportFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>UserPassportFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
 
     <servlet>
         <servlet-name>spring</servlet-name>
