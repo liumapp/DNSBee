@@ -50,4 +50,8 @@ public class UserPassportUtil {
                 (int) TimeUnit.DAYS.toSeconds(30), "/");
     }
 
+    public static void removeUserPassportCookie(HttpServletResponse response , UserPassport userPassport) {
+        CookieUtils.removeCookie(response , CookieUtils.TICKET_KEY , "/");
+    }
+
 }

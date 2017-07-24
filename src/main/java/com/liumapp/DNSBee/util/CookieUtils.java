@@ -75,4 +75,11 @@ public class CookieUtils {
         cookie.setMaxAge(second);
         response.addCookie(cookie);
     }
+
+    public static void removeCookie (HttpServletResponse response , String key , String path) {
+        Cookie cookie = new Cookie(key , null);
+        cookie.setPath(path);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+    }
 }
