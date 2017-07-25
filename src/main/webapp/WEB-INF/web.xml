@@ -14,7 +14,21 @@
         <param-name>log4jRefreshInterval</param-name>
         <param-value>2000</param-value>
     </context-param>
-
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>LoginRequireFilter</filter-name>
+        <filter-class>com.liumapp.DNSBee.filter.LoginRequireFilter</filter-class>
+        <init-param>
+            <param-name>noCheckPath</param-name>
+            <param-value>login;register;nav</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginRequireFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--<filter>-->
         <!--<filter-name>UserPassportFilter</filter-name>-->
         <!--<filter-class>com.liumapp.DNSBee.filter.UserPassportFilter</filter-class>-->
