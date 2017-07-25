@@ -52,7 +52,7 @@ public class LoginController extends MultiActionController {
         try {
             userPassport = userPassportSerivce.doLogin(username, password);
             UserPassportUtil.saveUserPassportCookie(response, userPassport);
-            userZonesService.mergeUserZones(request, response, userPassport);
+//            userZonesService.mergeUserZones(request, response, userPassport);
             Map<String, Object> resultMap = JsonResult.success("Success！").toMap();
             resultMap.put("token", userPassport.getTicket());
             return resultMap;

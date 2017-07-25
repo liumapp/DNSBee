@@ -53,7 +53,7 @@ public class RegisterController extends MultiActionController {
             userPassport = userPassportSerivce.addUserPassport(username, password);
             UserPassportUtil.saveUserPassportCookie(response, userPassport);
             Map<String, Object> resultMap = JsonResult.success("Sign up success！").toMap();
-            userZonesService.mergeUserZones(request, response, userPassport);
+//            userZonesService.mergeUserZones(request, response, userPassport);
             resultMap.put("token", userPassport.getTicket());
             return resultMap;
         } catch (RegisterException e) {
