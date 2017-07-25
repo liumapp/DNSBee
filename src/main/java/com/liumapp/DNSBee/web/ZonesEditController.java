@@ -81,7 +81,8 @@ public class ZonesEditController extends MultiActionController {
         UserPassport userPassport = RequestThreadUtils.getUserPassport();
         String zones = userZonesService.getZones(userPassport);
         if (zones == null) {
-            zones = CookieUtils.getZones(request);
+            zones = "";
+//            zones = CookieUtils.getZones(request);
         }
         modelAndView.addObject("id", 0);
         modelAndView.addObject("content", zones);

@@ -45,7 +45,8 @@ public class ZonesPickController extends MultiActionController {
         UserPassport userPassport = RequestThreadUtils.getUserPassport();
         String zones = userZonesService.getZones(userPassport);
         if (zones == null) {
-            zones = CookieUtils.getZones(request);
+//            zones = CookieUtils.getZones(request);
+            zones = "";
         }
         if (StringUtils.isBlank(zones) && !StringUtils.isBlank(zonesBase64)) {
             zonesBase64 = zonesBase64.replaceAll("^\"","").replaceAll("\"$","");
