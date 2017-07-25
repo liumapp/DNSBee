@@ -21,7 +21,7 @@ public class ZonesFileApplyer {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    public void apply(String ip, String text) {
+    public void apply(String userNumber, String text) {
 
         BufferedReader bufferedReader = new BufferedReader(new StringReader(
                 text));
@@ -29,7 +29,7 @@ public class ZonesFileApplyer {
         try {
 //            dnsbroodConnector.deleteAllByIp(ip);
             while ((line = bufferedReader.readLine()) != null) {
-                dnsbroodConnector.addByIp(ip, line);
+                dnsbroodConnector.addByUserNumber(userNumber, line);
             }
         } catch (IOException e) {
             logger.info("wtf!??", e);

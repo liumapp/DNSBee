@@ -3,7 +3,9 @@ package com.liumapp.DNSBee.web;
 import com.liumapp.DNSBee.connector.DnsbroodConnector;
 import com.liumapp.DNSBee.connector.ZonesFileApplyer;
 import com.liumapp.DNSBee.model.JsonResult;
+import com.liumapp.DNSBee.model.UserPassport;
 import com.liumapp.DNSBee.util.IPUtils;
+import com.liumapp.DNSBee.util.RequestThreadUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +34,9 @@ public class ZonesApplyController extends MultiActionController {
     @ResponseBody
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Object save(@RequestParam("text") String text, HttpServletRequest request) {
+        UserPassport userPassport = RequestThreadUtils.getUserPassport();
 //        zonesFileApplyer.apply(IPUtils.getClientIp(request), text);
-        zonesFileApplyer.apply(IPUtils.LOCAL_LOOP_ADDRESS , text);
+        zonesFileApplyer.apply(userPassport.getUserNumber(), text);
 
         if (dnsbroodConnector.isConnected()) {
             return JsonResult.success("Aplly success!");

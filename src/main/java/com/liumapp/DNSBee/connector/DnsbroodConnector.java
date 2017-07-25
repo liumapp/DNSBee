@@ -34,7 +34,7 @@ public class DnsbroodConnector implements InitializingBean {
         queen.say(DELETE_ZONES_IP + ip);
     }
 
-    public void addByIp(String ip, String line) {
+    public void addByUserNumber(String userNumber, String line) {
         if (line.startsWith("#")) {
             return;
         }
@@ -44,7 +44,7 @@ public class DnsbroodConnector implements InitializingBean {
         line = StringUtils.trim(line);
         line = line.replaceAll("\\s+#[^\\s]+", "");
         line = line.replaceAll("\\s+", "_");
-        queen.say(ADD_ZONES_IP + ip + ":" + line);
+        queen.say(ADD_ZONES_IP + userNumber + ":" + line);
     }
 
     public boolean isConnected() {

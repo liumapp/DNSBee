@@ -61,6 +61,14 @@ public class ZonesPickController extends MultiActionController {
         return modelAndView;
     }
 
+    /**
+     * 首页添加一条新的记录
+     * @param request
+     * @param response
+     * @param json
+     * @return
+     * @throws IOException
+     */
     @ResponseBody
     @RequestMapping("pick")
     public Object pick(HttpServletRequest request, HttpServletResponse response, @RequestParam("json") String json) throws IOException {
