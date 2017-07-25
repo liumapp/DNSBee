@@ -13,6 +13,10 @@ public class RequestThreadUtils {
 
     private final static String PASSPORT_KEY = "userPassport";
 
+    public static String getPassportKey() {
+        return PASSPORT_KEY;
+    }
+
     public static UserPassport getUserPassport() {
         return getAttribute(PASSPORT_KEY, UserPassport.class);
     }
