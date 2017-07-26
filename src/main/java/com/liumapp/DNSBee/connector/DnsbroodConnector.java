@@ -16,7 +16,10 @@ import java.io.IOException;
 @Service
 public class DnsbroodConnector implements InitializingBean {
 
-    //delete_zones_ip_192.168.0.1
+    /**
+     * del all dns records within specify userNumber : delete_zones_ip_LM0000000
+     * del specify records : delete_zones_ip_LM0000000:4.5.6.7 gmail.liumapp.com
+     */
     private static final String DELETE_ZONES_IP = "delete_zones_ip_";
 
     //add_zones_ip_192.168.0.1:127.0.0.1_*.dianping.com
@@ -30,8 +33,8 @@ public class DnsbroodConnector implements InitializingBean {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    public void deleteAllByIp(String ip) {
-        queen.say(DELETE_ZONES_IP + ip);
+    public void deleteAllByUserNumber(String userNumber) {
+        queen.say(DELETE_ZONES_IP + userNumber);
     }
 
     public void addByUserNumber(String userNumber, String line) {
