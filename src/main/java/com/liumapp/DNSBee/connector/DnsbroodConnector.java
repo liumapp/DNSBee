@@ -22,19 +22,38 @@ public class DnsbroodConnector implements InitializingBean {
      */
     private static final String DELETE_ZONES_IP = "delete_zones_ip_";
 
-    //add_zones_ip_192.168.0.1:127.0.0.1_*.dianping.com
+    //add_zones_ip_LM28937498275:127.0.0.1_test.liumapp.com
     private static final String ADD_ZONES_IP = "add_zones_ip_";
 
+    //update_zones_ip_LM09000:4.5.6.8 gmail.liumapp.com
     private static final String UPDATE_ZONES_IP = "update_zones_ip_";
 
+    //select_zones_ip_gmail.liumapp.com
     private static final String SELECT_ZONES_IP = "select_zones_ip_";
 
     private Queen queen;
 
     private Logger logger = Logger.getLogger(getClass());
 
+    public void selectIpByDomain (String domain)  {
+        queen.say(SELECT_ZONES_IP + domain);
+    }
+
     public void deleteAllByUserNumber(String userNumber) {
         queen.say(DELETE_ZONES_IP + userNumber);
+    }
+
+    public void updateByUserNumber (String userNumber , String line) {
+
+        if (line.startsWith("#")) return;
+        if (line.contains(":")) {
+            line = StringUtils.substringAfterLast(line , ":");
+        }
+        line = StringUtils.trim(line);
+        line = line.replaceAll("\\s+#[^\\s]+", "");
+        line = line.replaceAll("\\s+", "_");
+        queen.say(UPDATE_ZONES_IP + userNumber + ":" + line);
+
     }
 
     public void addByUserNumber(String userNumber, String line) {
@@ -48,6 +67,10 @@ public class DnsbroodConnector implements InitializingBean {
         line = line.replaceAll("\\s+#[^\\s]+", "");
         line = line.replaceAll("\\s+", "_");
         queen.say(ADD_ZONES_IP + userNumber + ":" + line);
+    }
+
+    public String getReturnInfo () throws IOException {
+        return queen.hear();
     }
 
     public boolean isConnected() {
