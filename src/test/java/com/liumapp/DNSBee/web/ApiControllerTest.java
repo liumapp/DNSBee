@@ -34,7 +34,7 @@ public class ApiControllerTest {
 
         Map params = new HashMap();
         params.put("userNumber" ,userNumber);
-        params.put("domain" , "junitest6.liumapp.com");
+        params.put("domain" , "junitest9.liumapp.com");
         params.put("value" , "11.22.33.44");
 
         System.out.println(httpClientUtil.sendPost(url , params));
@@ -60,7 +60,6 @@ public class ApiControllerTest {
         String url = "http://localhost:9090/api/select";
 
         HttpClientUtil httpClientUtil = new HttpClientUtil();
-
         Map params = new HashMap();
         params.put("domain" , "junitest.liumapp.com");
 

@@ -30,14 +30,25 @@
         <filter-class>com.liumapp.DNSBee.filter.LoginRequireFilter</filter-class>
         <init-param>
             <param-name>noCheckPath</param-name>
-            <param-value>login;register;nav;js;css;png;webfont;</param-value>
+            <param-value>login;register;nav;js;css;png;webfont;api</param-value>
         </init-param>
     </filter>
     <filter-mapping>
         <filter-name>LoginRequireFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+    <filter>
+        <filter-name>InternalIpFilter</filter-name>
+        <filter-class>com.liumapp.DNSBee.filter.InternalIpFilter</filter-class>
+        <init-param>
+            <param-name>ip</param-name>
+            <param-value>127.0.0.1;118.190.133.67;0:0:0:0:0:0:0:1</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>InternalIpFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>spring</servlet-name>
@@ -48,6 +59,7 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
         <url-pattern>/</url-pattern>
