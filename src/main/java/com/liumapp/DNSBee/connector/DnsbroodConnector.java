@@ -18,7 +18,7 @@ public class DnsbroodConnector implements InitializingBean {
 
     /**
      * del all dns records within specify userNumber : delete_zones_ip_LM0000000
-     * del specify records : delete_zones_ip_LM0000000:4.5.6.7 gmail.liumapp.com
+     * del specify records : delete_zones_ip_LM0000000:4.5.6.7_gmail.liumapp.com
      */
     private static final String DELETE_ZONES_IP = "delete_zones_ip_";
 
@@ -34,6 +34,22 @@ public class DnsbroodConnector implements InitializingBean {
     private Queen queen;
 
     private Logger logger = Logger.getLogger(getClass());
+
+    public static String getDeleteZonesIp() {
+        return DELETE_ZONES_IP;
+    }
+
+    public static String getAddZonesIp() {
+        return ADD_ZONES_IP;
+    }
+
+    public static String getUpdateZonesIp() {
+        return UPDATE_ZONES_IP;
+    }
+
+    public static String getSelectZonesIp() {
+        return SELECT_ZONES_IP;
+    }
 
     public void selectIpByDomain (String domain)  {
         queen.say(SELECT_ZONES_IP + domain);
@@ -69,8 +85,17 @@ public class DnsbroodConnector implements InitializingBean {
         queen.say(ADD_ZONES_IP + userNumber + ":" + line);
     }
 
+    public void execute (String command) {
+        queen.say(command);
+    }
+
     public String getReturnInfo () throws IOException {
-        return queen.hear();
+        if (isConnected()) {
+            return queen.hear();
+        } else {
+            throw new IOException("lost connection to queen");
+        }
+
     }
 
     public boolean isConnected() {
