@@ -34,11 +34,58 @@ public class ApiControllerTest {
 
         Map params = new HashMap();
         params.put("userNumber" ,userNumber);
-        params.put("domain" , "junitest.liumapp.com");
+        params.put("domain" , "junitest6.liumapp.com");
         params.put("value" , "11.22.33.44");
 
         System.out.println(httpClientUtil.sendPost(url , params));
 
     }
 
+    @Test
+    public void testUpdate () {
+        String url = "http://localhost:9090/api/update";
+
+        HttpClientUtil httpClientUtil = new HttpClientUtil();
+
+        Map params = new HashMap();
+        params.put("userNumber" ,userNumber);
+        params.put("domain" , "junitest.liumapp.com");
+        params.put("value" , "11.22.44.55");
+
+        System.out.println(httpClientUtil.sendPost(url , params));
+    }
+
+    @Test
+    public void testSelect () {
+        String url = "http://localhost:9090/api/select";
+
+        HttpClientUtil httpClientUtil = new HttpClientUtil();
+
+        Map params = new HashMap();
+        params.put("domain" , "junitest.liumapp.com");
+
+        System.out.println(httpClientUtil.sendPost(url , params));
+    }
+
+    @Test
+    public void testDelete () {
+        String url = "http://localhost:9090/api/del";
+
+        HttpClientUtil httpClientUtil = new HttpClientUtil();
+
+        Map params = new HashMap();
+        params.put("userNumber" ,userNumber);
+        params.put("domain" , "junitest.liumapp.com");
+        params.put("value" , "11.22.33.44");
+
+        System.out.println(httpClientUtil.sendPost(url , params));
+    }
+
+    @Test
+    public void testPage () {
+        String url = "http://localhost:9090/api/testPage";
+        HttpClientUtil httpClientUtil = new HttpClientUtil();
+        Map params = new HashMap();
+        System.out.println(httpClientUtil.sendPost(url , params));
+    }
 }

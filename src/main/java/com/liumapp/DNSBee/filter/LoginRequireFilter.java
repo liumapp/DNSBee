@@ -47,6 +47,7 @@ public class LoginRequireFilter implements Filter {
         UserPassport userPassport = RequestThreadUtils.getUserPassport();
         if (userPassport == null) {
             response.sendRedirect(request.getContextPath() + "/login");
+            return ;
         }
 
         filterChain.doFilter(servletRequest , servletResponse);

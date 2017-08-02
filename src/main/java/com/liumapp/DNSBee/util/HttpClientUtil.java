@@ -63,16 +63,22 @@ public class HttpClientUtil {
                 result = EntityUtils.toString(entity);
             } else {
                 //发送失败时的处理
+                if (statusLine.getStatusCode() == 302) {
+                    //重定向
+                    String locationUrl=response.getLastHeader("Location").getValue();
+                    System.out.println(locationUrl);
+                }
             }
+            httpPost.releaseConnection();
+            return result;
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
+            return e.getMessage();
         } catch (IOException e) {
-            e.printStackTrace();
+            return e.getMessage();
         }  finally {
             httpPost.releaseConnection();//关闭连接
         }
 
-        return result;
     }
 
 }

@@ -30,7 +30,7 @@
         <filter-class>com.liumapp.DNSBee.filter.LoginRequireFilter</filter-class>
         <init-param>
             <param-name>noCheckPath</param-name>
-            <param-value>login;register;nav;js;css;png;webfont</param-value>
+            <param-value>login;register;nav;js;css;png;webfont;</param-value>
         </init-param>
     </filter>
     <filter-mapping>
