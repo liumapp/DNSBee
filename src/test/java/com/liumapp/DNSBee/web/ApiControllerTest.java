@@ -25,6 +25,7 @@ public class ApiControllerTest {
 
     private String userNumber = "LMtest";
 
+    @Ignore
     @Test
     public void testAdd () {
 
@@ -41,6 +42,7 @@ public class ApiControllerTest {
 
     }
 
+    @Ignore
     @Test
     public void testUpdate () {
         String url = "http://localhost:9090/api/update";
@@ -55,6 +57,7 @@ public class ApiControllerTest {
         System.out.println(httpClientUtil.sendPost(url , params));
     }
 
+    @Ignore
     @Test
     public void testSelect () {
         String url = "http://localhost:9090/api/select";
@@ -66,6 +69,7 @@ public class ApiControllerTest {
         System.out.println(httpClientUtil.sendPost(url , params));
     }
 
+    @Ignore
     @Test
     public void testDelete () {
         String url = "http://localhost:9090/api/del";
@@ -80,6 +84,20 @@ public class ApiControllerTest {
         System.out.println(httpClientUtil.sendPost(url , params));
     }
 
+    @Ignore
+    @Test
+    public void testMultyDel () {
+        String url = "http://localhost:9090/api/multyDel";
+
+        HttpClientUtil httpClientUtil = new HttpClientUtil();
+
+        Map params = new HashMap();
+        params.put("userNumber" ,userNumber);
+
+        System.out.println(httpClientUtil.sendPost(url , params));
+    }
+
+    @Ignore
     @Test
     public void testPage () {
         String url = "http://localhost:9090/api/testPage";
@@ -87,4 +105,5 @@ public class ApiControllerTest {
         Map params = new HashMap();
         System.out.println(httpClientUtil.sendPost(url , params));
     }
+
 }

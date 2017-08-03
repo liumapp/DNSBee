@@ -38,7 +38,6 @@ public class InternalIpFilter implements Filter{
                     filterChain.doFilter(servletRequest , servletResponse);
                     return ;
                 }
-
             }
         }
 
