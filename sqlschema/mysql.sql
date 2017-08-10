@@ -1,3 +1,4 @@
+
 CREATE TABLE ZonesFile (
   `id`   INTEGER PRIMARY KEY AUTO_INCREMENT,
   `type` INTEGER,
@@ -5,7 +6,7 @@ CREATE TABLE ZonesFile (
   `text` VARCHAR(10000),
   `user` VARCHAR(100)
 )
-  ENGINE ="innodb"
+  ENGINE = innodb
   DEFAULT CHARSET utf8;
 
 CREATE TABLE User_Passport (
@@ -19,5 +20,5 @@ CREATE TABLE User_Passport (
   UNIQUE KEY `uk_username` (`username`),
   UNIQUE KEY `uk_ticket` (`ticket`)
 )
-  ENGINE ="innodb"
+  ENGINE = innodb
   DEFAULT CHARSET utf8;
