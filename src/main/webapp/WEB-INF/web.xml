@@ -42,7 +42,7 @@
         <filter-class>com.liumapp.DNSBee.filter.InternalIpFilter</filter-class>
         <init-param>
             <param-name>ip</param-name>
-            <param-value>127.0.0.1;118.190.133.67;0:0:0:0:0:0:0:1</param-value>
+            <param-value>127.0.0.1;118.190.133.67;0:0:0:0:0:0:0:1;183.247.162.210</param-value>
         </init-param>
     </filter>
     <filter-mapping>
